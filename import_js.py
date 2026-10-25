@@ -22,9 +22,9 @@ class ImportJsReplaceCommand(sublime_plugin.TextCommand):
 
 class ImportJsCommand(sublime_plugin.TextCommand):
     def project_root(self):
-        import os  
+        import os
         return self.view.window().extract_variables().get('folder') or os.path.dirname(self.view.file_name())
-
+    
 
     def run(self, edit, **args): # pylint: disable=arguments-differ
         current_file_contents = self.view.substr(sublime.Region(0, self.view.size()))
